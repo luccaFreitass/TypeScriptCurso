@@ -20,8 +20,6 @@ export class NegociacaoController {
     criaNegociacao(): Negociacao {
         const exp = /-/g;
         const data = this.inputData.value.replace(exp, '/');  // Substituindo hífens por barras
-
-        // Criando a data no formato "YYYY/MM/DD"
         const partesData = data.split('/');
         const date = new Date(parseInt(partesData[0]), parseInt(partesData[1]) - 1, parseInt(partesData[2]))
         const quantidade = parseInt(this.inputQuantidade.value);
